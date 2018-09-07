@@ -1,0 +1,10 @@
+.div {
+  -webkit-transform: rotate(45deg) scale(3, 2);
+  -moz-transform: rotate(45deg) scale(3, 2);
+  -ms-transform: rotate(45deg) scale(3, 2);
+  -o-transform: rotate(45deg) scale(3, 2);
+  transform: rotate(45deg) scale(3, 2);
+  width: 20px;
+  height: 20px;
+  background: #0099CC;
+}

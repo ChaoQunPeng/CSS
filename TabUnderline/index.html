@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="../jquery-3.3.1.js"></script>
+
+</head>
+
+<body>
+  <div style="height:300px;"></div>
+  <div class="navigationBar">
+    <div class="navigation">
+      <a href="####">首页</a>
+      <a href="####">介绍你</a>
+      <a href="####">关于我们</a>
+      <a href="####">获取更多的信息</a>
+      <span class="sign"></span>
+    </div>
+  </div>
+  <div style="height:1500px;"></div>
+  <script>
+    $('.navigation > a').click(function () {
+      var a = $(this).position().left;
+      $('.sign').width($(this).outerWidth());
+      $('.sign').css('left', a);
+    });
+
+    
+    $(window).scroll(function (event) {
+      var st = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;
+      if(st>305){
+        $('.navigationBar').css({'position':'fixed','top':'0'});
+      }else
+      {
+        $('.navigationBar').css('position','relative');
+      }
+    });
+  </script>
+</body>
+
+</html>
