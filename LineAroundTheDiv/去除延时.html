@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>环绕特效-去掉延时</title>
+  <style>
+    :root {
+      --line-width: 3px;
+      --width: 100%;
+      --height: 100%;
+      --line-duration: .3s;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+      background: #1c1c1c;
+    }
+
+    .enclose {
+      position: relative;
+      width: 250px;
+      height: 50px;
+      cursor: pointer;
+      display: inline-block;
+      background: rgba(241, 241, 241, 0.25);
+      color: #fff;
+      transition: all .3s;
+      box-shadow: inset 0 0 0 #ddd;
+      text-shadow: 0 0 0 #2097EF;
+      text-align: center;
+    }
+
+    .enclose:hover {
+      text-shadow: 0 0 10px #2097EF;
+    }
+
+    .top,
+    .right,
+    .bottom,
+    .left {
+      position: absolute;
+      background: #2097EF;
+      box-shadow: 0 0 4px #2097EF;
+    }
+
+    .top,
+    .bottom {
+      width: 0;
+      height: var(--line-width);
+    }
+
+    .left,
+    .right {
+      width: var(--line-width);
+      height: 0;
+    }
+
+    .enclose>span {
+      transition: all var(--line-duration);
+    }
+
+    .top {
+      top: 0;
+      left: 0;
+    }
+
+    .enclose:hover>.top {
+      width: var(--width);
+    }
+
+    .right {
+      top: 0;
+      right: 0;
+    }
+
+    .enclose:hover>.right {
+      height: var(--height);
+    }
+
+    .bottom {
+      bottom: 0;
+      right: 0;
+    }
+
+    .enclose:hover>.bottom {
+      width: var(--width);
+    }
+
+    .left {
+      bottom: 0;
+      left: 0;
+    }
+
+    .enclose:hover>.left {
+      height: var(--height);
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="enclose">
+    <span class="top"></span>
+    <span class="right"></span>
+    <span class="bottom"></span>
+    <span class="left"></span>
+    <p class="text">Button</p>
+  </div>
+
+</body>
+
+</html>
